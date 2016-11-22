@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+var app   = require('../app.js');
+var debug = require('debug')('api:server');
+var http  = require('http');
+
+/**
+ * Get port from environment and store in Express.
+ */
+var port = normalizePort(process.env.PORT || '3000');
+
+app.set('port', port);
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE, HEAD');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
+    res.setHeader("Access-Control-Allow-Credentials", true);
+    next();
+});
+
+/**
+ * Create HTTP server.
+ */
+var server = http.createServer(app);
+server.listen(port);
