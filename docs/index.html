@@ -19,7 +19,7 @@
 	<script src="js/prettyprint.js"></script>
 	
 	<script>
-		$.getJSON( "https://icdapp.herokuapp.com/category?q=A00", function( data ) {
+		$.getJSON( "https://icdapp.herokuapp.com/chapter?q=20", function( data ) {
 		  	var ppTable = prettyPrint(data);
 			document.getElementById('data').appendChild(ppTable);
 		});

@@ -4,7 +4,8 @@
   "description": "application focused on consult information about ICD (International Classification of Diseases)",
   "main": "index.js",
   "scripts": {
-    "start": "node bin/www"
+    "start": "node bin/www",
+    "test": "DB_CONFIG_ENV=<config about mongoDB IP:PORT such as xxx.xxx.xxx.xxx:port > DB_PWD_ENV=<password of database> DB_USER_ENV=<username of database> PORT=<server port> node bin/www"
   },
   "keywords": [
     "icd",
