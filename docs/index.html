@@ -11,9 +11,13 @@
 	</style>
 </head>
 <body>
-	<h1>ICD</h1>
+	<h1>Chapter Example of ICD Rest API</h1>
+	<p>Example of <strong>https://icdapp.herokuapp.com/chapter?q=22</strong></p>
+	<div id="data_chapter" class="demo"></div>
+
+	<h1>Category Example of ICD Rest API</h1>
 	<p>Example of <strong>https://icdapp.herokuapp.com/category?q=A00</strong></p>
-	<div id="data" class="demo"></div>
+	<div id="data_category" class="demo"></div>
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/prettyprint.js"></script>
@@ -21,7 +25,12 @@
 	<script>
 		$.getJSON( "https://icdapp.herokuapp.com/chapter?q=20", function( data ) {
 		  	var ppTable = prettyPrint(data);
-			document.getElementById('data').appendChild(ppTable);
+			document.getElementById('data_chapter').appendChild(ppTable);
+		});
+
+		$.getJSON( "https://icdapp.herokuapp.com/category?q=A00", function( data ) {
+		  	var ppTable = prettyPrint(data);
+			document.getElementById('data_category').appendChild(ppTable);
 		});
 	</script>
 </body>
